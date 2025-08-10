@@ -1,0 +1,1 @@
+console.log("Election Website loaded!");

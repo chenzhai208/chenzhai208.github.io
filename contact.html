@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Election Website - Contact Us</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- 引入 Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      if (!name || !email || !message) {
+        alert("Please fill out all fields.");
+        return false;
+      }
+
+      if (!email.includes('@')) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Election Website</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="guide.html">Election Guide</a></li>
+        <li><a href="candidates.html">Candidates</a></li>
+        <li><a href="voting-tools.html">Voting Tools</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Contact Us</h2>
+      <p>If you have any questions, feel free to reach out to us.</p>
+      <form action="submit_form.php" method="POST" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <!-- Google reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Election Website</p>
+  </footer>
+</body>
+</html>

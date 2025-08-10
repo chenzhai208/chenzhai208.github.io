@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Election Events</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Election Website</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="guide.html">Election Guide</a></li>
+        <li><a href="election-events.html">Election Events</a></li>
+        <li><a href="voting-tools.html">Voting Tools</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="election-events">
+      <h2>Election Events</h2>
+      <div id="events-list">
+        <!-- 动态加载的活动将显示在这里 -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Election Website</p>
+  </footer>
+
+  <!-- JavaScript 动态加载活动 -->
+  <script>
+    // 模拟选举活动数据
+    const eventsData = [
+      {
+        title: "Presidential Debate",
+        date: "2023-10-15", // 使用 YYYY-MM-DD 格式方便排序
+        location: "City Hall Auditorium",
+        candidates: [
+          { name: "John Doe", party: "Independent", link: "candidate-john-doe.html" },
+          { name: "Jane Smith", party: "Green Party", link: "candidate-jane-smith.html" },
+          { name: "Michael Johnson", party: "Democratic Party", link: "candidate-michael-johnson.html" }
+        ]
+      },
+      {
+        title: "Local Council Election",
+        date: "2023-11-05",
+        location: "Community Center",
+        candidates: [
+          { name: "Alice Brown", party: "Republican Party", link: "candidate-alice-brown.html" },
+          { name: "Bob White", party: "Democratic Party", link: "candidate-bob-white.html" },
+          { name: "Charlie Green", party: "Independent", link: "candidate-charlie-green.html" }
+        ]
+      },
+      {
+        title: "Senate Election Forum",
+        date: "2023-11-10",
+        location: "Town Hall",
+        candidates: [
+          { name: "David Lee", party: "Libertarian Party", link: "candidate-david-lee.html" },
+          { name: "Emily Carter", party: "Democratic Party", link: "candidate-emily-carter.html" },
+          { name: "Frank Harris", party: "Republican Party", link: "candidate-frank-harris.html" }
+        ]
+      }
+    ];
+
+    // 按日期从新到旧排序函数
+    function sortEventsByDate(events) {
+      return events.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+
+    // 动态加载活动
+    function loadEvents() {
+      const eventsList = document.getElementById("events-list");
+
+      // 按日期从新到旧排序
+      const sortedEvents = sortEventsByDate(eventsData);
+
+      sortedEvents.forEach(event => {
+        const eventDiv = document.createElement("div");
+        eventDiv.className = "event";
+
+        // 格式化日期
+        const formattedDate = new Date(event.date).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        });
+
+        // 生成候选人列表
+        const candidatesList = event.candidates
+          .map(candidate => `<li><a href="${candidate.link}">${candidate.name} (${candidate.party})</a></li>`)
+          .join("");
+
+        eventDiv.innerHTML = `
+          <h3>${event.title}</h3>
+          <p><strong>Date:</strong> ${formattedDate}</p>
+          <p><strong>Location:</strong> ${event.location}</p>
+          <div class="candidates">
+            <h4>Candidates</h4>
+            <ul>
+              ${candidatesList}
+            </ul>
+          </div>
+        `;
+
+        eventsList.appendChild(eventDiv);
+      });
+    }
+
+    // 页面加载完成后调用
+    window.onload = loadEvents;
+  </script>
+</body>
+</html>
