@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeff Cassin - Candidate</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>YouthVotesMatter.ORG</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="guide.html">Election Guide</a></li>
+        <li><a href="election-events.html">Election Events</a></li>
+        <li><a href="voting-tools.html">Voting Tools</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="candidate-profile">
+      <h2>Jeff Cassin</h2>
+      <div class="candidate-photo">
+        <img src="images/jeff-assin.jpg" alt="Jeff Cassin" width="250" height="250">
+      </div>
+      <p><strong>Bio:</strong> 
+
+My family and I have lived in Millburn since 2018, and my son is currently enrolled in the Millburn public school system.  I grew up in Massachusetts and moved to New York in 2003 to attend Benjamin N. Cardozo School of Law.  While my career is based in New York City, I moved to New Jersey in 2007 to support my wife’s professional opportunity — and we ultimately chose Millburn for its outstanding schools and convenient train access to the city.
+</p>
+
+<p> I am a Partner at Norris McLaughlin, P.A., a regional law firm with offices in New York City, Bridgewater, NJ and Allentown, PA.  My practice focuses on mergers and acquisitions (M&A).
+
+</p>
+
+<p> Both my wife and I have been active volunteers with the PTO and various district events.  I’ve contributed especially to the South Mountain School Science Fair and served as a member of the Millburn Education Foundation, where I co-chaired STEAMfest for two years.  I have also coached eight seasons of Millburn Recreation youth baseball and served on the Millburn Recreation Commission.  In the past two years, I’ve coached an Odyssey of the Mind team, taking the Washington School P1 team to the World Finals in Michigan.
+
+</p>
+      <a href="election-events.html" class="back-button">Back to Events</a>
+    </section>
+
+
+<!-- 放在 candidate-profile 段落后面 -->
+<div class="qa-embed">
+  <iframe id="qaFrame" src="BOE_Cassin_QA.html" loading="lazy"></iframe>
+</div>
+
+<style>
+  .qa-embed iframe{
+    width: 100%;
+    border: 0;
+    /* 给个初始高度，后面用 JS 自适应 */
+    min-height: 600px;
+  }
+</style>
+<script>
+  // 同源情况下自动根据内部文档高度自适应
+  const f = document.getElementById('qaFrame');
+  f.addEventListener('load', () => {
+    try {
+      const h = f.contentWindow.document.documentElement.scrollHeight;
+      f.style.height = h + 'px';
+    } catch (e) {
+      // 非同源时无法读取高度，保持默认 min-height
+    }
+  });
+</script>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 YouthVotesMatter.org</p>
+  </footer>
+</body>
+</html>
