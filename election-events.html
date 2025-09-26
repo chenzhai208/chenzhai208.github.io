@@ -106,7 +106,7 @@
 
         // 生成候选人列表
         const candidatesList = event.candidates
-          .map(candidate => `<li><a href="${candidate.link}">${candidate.name} (${candidate.party})</a></li>`)
+          .map(candidate => `<li><a href="${candidate.link}">${candidate.name} </a></li>`)
           .join("");
 
         eventDiv.innerHTML = `
@@ -131,4 +131,5 @@
 </body>
 
 </html>
+
 
