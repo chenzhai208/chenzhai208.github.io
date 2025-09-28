@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Contact</title>
+  <link rel="stylesheet" href="styles.css"/>
+
+  <style>
+    /* Header layout */
+    .contact-local header .wrap{
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .contact-local header nav ul{
+      margin-left:auto; display:flex; gap:1rem; justify-content:flex-end;
+      list-style:none; padding:0;
+    }
+
+    /* Wider unified form layout */
+    .contact-local form{
+      max-width:560px;          /* ← 放宽表单整体宽度 */
+      margin:0 auto;
+      padding:0 1rem;
+      text-align:left;
+    }
+    .contact-local label{
+      display:block;
+      margin:.5rem 0 .25rem;
+      text-align:left;
+    }
+    .contact-local input[type="text"],
+    .contact-local input[type="email"],
+    .contact-local textarea{
+      display:block;
+      width:100%;
+      max-width:100%;
+      margin:0;
+      box-sizing:border-box;
+      padding:.75rem 1rem;      /* ← 稍微加厚内边距，视觉更“宽” */
+      border:1px solid #ccc;
+      border-radius:.5rem;
+      font:inherit;
+    }
+    .contact-local button[type="submit"]{
+      margin-top:.9rem;
+      padding:.7rem 1.1rem;
+      border:0; border-radius:.6rem; cursor:pointer; font:inherit;
+    }
+    @media (max-width:520px){
+      .contact-local form{ max-width:100%; }
+    }
+  </style>
+</head>
+
+<body class="contact-local">
+<header>
+  <div class="wrap">
+    <h1 class="logo">YouthVotesMatter.Org</h1>
+    <nav><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="wrap">
+    <h2>Contact Us</h2>
+
+    <form id="contact-form" action="submit_form.php" method="POST" novalidate>
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required autocomplete="name"/>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required autocomplete="email"/>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <!-- 已移除 reCAPTCHA -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024-2025 YouthVotesMatter.ORG</p>
+</footer>
+</body>
+</html>

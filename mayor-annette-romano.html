@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Annette Romano</title>
+<link href="styles.css" rel="stylesheet"/>
+
+<style>
+/* Page-local: right-align top nav on about.html only */
+.about-local header .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav right */
+}
+.about-local header nav ul{
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* 统一的卡片框样式：Bio 与 Q&A 共用 */
+.panel-box{
+  background: var(--card-bg, #ffffff);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  margin: 16px auto;           /* 上下间距 + 居中 */
+  max-width: 800px;            /* 统一宽度 */
+}
+
+/* Bio 内段落与层级标题、列表样式 */
+.panel-box.bio-box p{
+  margin: 0 0 .75rem;
+  line-height: 1.7;
+}
+.panel-box.bio-box h3{
+  margin: 1rem 0 .5rem;
+  font-size: 1.15rem;
+}
+.panel-box.bio-box ul{
+  margin: .25rem 0 .75rem 1.2rem;
+}
+.panel-box.bio-box li{
+  margin: .3rem 0;
+}
+.panel-box.bio-box p:last-child{ margin-bottom: 0; }
+
+/* Q&A 内的 iframe 自适应（如后续需要） */
+.qa-embed iframe{
+  width: 100%;
+  border: 0;
+  min-height: 600px;           /* 需要更高可调 */
+  display: block;
+}
+</style>
+</head>
+
+<body class="about-local">
+<header>
+  <div class="wrap">
+    <h1 class="logo">YouthVotesMatter.Org</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="candidate-profile">
+    <h2>Annette Romano</h2>
+
+    <div class="candidate-photo" style="text-align:center; margin:12px 0;">
+      <img src="images/annette.jpg" alt="Annette Romano" width="457" height="640" style="max-width:100%; height:auto;">
+    </div>
+
+    <!-- Bio：使用统一的 panel-box 样式（已重写为层次清晰的内容） -->
+    <div class="panel-box bio-box">
+
+      <p><strong>Bio:</strong> Romano, a lifelong township resident who currently serves as Township Mayor, cited a list of accomplishments as well as goals for a second 3-year term.</p>
+
+      <h3>First-Term Accomplishments</h3>
+      <p>Among her first term accomplishments, Mayor Romano cited the Main Street closure and the Town Hall Plaza as an alternative, a very successful placemaking choice for the Township and Special Improvement District. Additional accomplishments include:</p>
+      <ul>
+        <li>Hired additional police officers, improved communication on incidents of home burglary, supported a staffing study and the continued implementation of crime fighting technology.</li>
+        <li>The “Mayor’s Message” became the “Millburn Message”, an opportunity for all Committee members to impart Township related information to the public.</li>
+        <li>Changed Mayoral Appointments to Township Boards and Commissions to appointment by consensus of the Governing Body.</li>
+        <li>Employee spotlight on social media.</li>
+        <li>Fostered communication and civility with the Township Committee to ensure productive business meetings.</li>
+      </ul>
+
+      <h3>Township Services & Partnerships</h3>
+      <ul>
+        <li>The importance of the Special Improvement District and what it provides to the businesses and property owners.</li>
+        <li>Successfully brought Animal Control back in house providing a better service to our residents.</li>
+        <li>Building and fostering important relationships for the implementation of the Orange Reservoir bypass, a critical flood mitigation effort by the Flood Mitigation Advisory Committee and Township.</li>
+        <li>Worked with Congresswoman Sherrill’s office to seek Community Projects funding for Gilbert Place pump station upgrades in the amount of $1.1M.</li>
+        <li>Pushed for transparency in the designation process of Historical landmarks and homes, which included a modification of the ordinance.</li>
+        <li>Approximately $2.9M received in grants since 2023.</li>
+      </ul>
+
+      <h3>Supported Actions by the Governing Body</h3>
+      <ul>
+        <li>Purchase of 22 E. Willow – temporary Town Hall and future community center/senior center.</li>
+        <li>Contribution to Paper Mill Playhouse capital campaign that includes improvements to township owned property.</li>
+        <li>Open Space referendum.</li>
+        <li>Bauer Community Center renovation.</li>
+        <li>Road Reconstruction program – $4M invested in our streets.</li>
+        <li>Main Street program application and award – Township now eligible for additional grant dollars and programs to improve commercial success and support our local businesses.</li>
+        <li>Update of the Township’s “Open Space Element of the Master Plan” and “Historic Element of the Master Plan” - both long overdue and helps guide the community.</li>
+        <li>Town Hall Renovation and Addition – talked about for over a decade, now coming to fruition.</li>
+      </ul>
+
+      <h3>Statement</h3>
+      <p>“I have always cared deeply about our township, and I would like to continue to move Millburn forward in a positive, responsible way. I have proven that I can lead in a bi-partisan manner”, she said.</p>
+
+      <h3>Community Service & Leadership</h3>
+      <p>Passionate about the Millburn/Short Hills community, Mayor Romano continues to give back to it in many ways. A community volunteer for the past 30 years, she began to contribute in our schools and for the schools PTO.</p>
+      <p>Romano chaired the school districts community outreach efforts including organized food, and toy drives, and was involved with the Millburn/Short Hills chapter of the American Red Cross. She served as a volunteer and later became a staff member serving as the Director of Health &amp; Safety. She worked with the district’s teachers and faculty to make sure everyone was certified annually in CPR and first aid.</p>
+      <p>Finally, with the townships’ help, she founded the food pantry and still manages it, a valuable resource in our community.</p>
+
+    </div>
+
+    <a href="events.html" class="back-button">Back to Events</a>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024-2025 YouthVotesMatter.ORG</p>
+</footer>
+</body>
+</html>

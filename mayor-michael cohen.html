@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Michael Cohen</title>
+<link href="styles.css" rel="stylesheet"/>
+
+<style>
+/* Page-local: right-align top nav on about.html only */
+.about-local header .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav right */
+}
+.about-local header nav ul{
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* 统一的卡片框样式：Bio 与 Q&A 共用 */
+.panel-box{
+  background: var(--card-bg, #ffffff);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  margin: 16px auto;           /* 上下间距 + 居中 */
+  max-width: 800px;            /* 统一宽度 */
+}
+
+/* Q&A 内容样式（复用 bio-box 类名以沿用现有样式） */
+.panel-box.bio-box p{
+  margin: 0 0 .75rem;
+  line-height: 1.7;
+}
+.panel-box.bio-box h3{
+  margin: 1rem 0 .5rem;
+  font-size: 1.15rem;
+}
+.panel-box.bio-box ul{
+  margin: .25rem 0 .75rem 1.2rem;
+}
+.panel-box.bio-box li{
+  margin: .3rem 0;
+}
+.panel-box.bio-box p:last-child{ margin-bottom: 0; }
+
+/* Q&A 内的 iframe 自适应（如后续需要） */
+.qa-embed iframe{
+  width: 100%;
+  border: 0;
+  min-height: 600px;           /* 需要更高可调 */
+  display: block;
+}
+</style>
+</head>
+
+<body class="about-local">
+<header>
+  <div class="wrap">
+    <h1 class="logo">YouthVotesMatter.Org</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="candidate-profile">
+    <h2>Michael Cohen</h2>
+
+    <div class="candidate-photo" style="text-align:center; margin:12px 0;">
+      <img src="images/michael-cohen.jpg" alt="Michael Cohen" width="457" height="640" style="max-width:100%; height:auto;">
+    </div>
+
+    <!-- TAP Q&A：替换原来的 Bio 内容 -->
+    <div class="panel-box bio-box">
+
+      <p><strong>TAP: How long have you lived in the township?</strong></p>
+      <p><strong>Cohen:</strong> My wife and I have lived in the township for 36 years, where we proudly raised our two children.</p>
+
+      <h3>TAP: What would you say are your most important accomplishments in office?</h3>
+      <p><strong>Cohen:</strong></p>
+      <p>In 2022, I ran on a platform of restoring professionalism and civility to Township Committee meetings. While we may not always agree, and the Committee is now bipartisan, I’m proud to say we have achieved that goal. By setting a respectful tone from the dais, we have also fostered greater civility from the audience.</p>
+      <p>I advocated for — and supported — increased funding for additional police officers and advanced technology, resulting in a significant decrease in crime across the township.</p>
+      <p>I also backed critical investments in drainage improvements for the South Mountain area, which has been hit hard by major storms. Several of these projects have already been completed, helping to protect homes and businesses.</p>
+      <p>By relocating our summer outdoor events to Town Hall Plaza, we delivered a full, successful season of concerts, movies and family activities — all without impacting emergency response operations.</p>
+      <p>As an ex officio member of the Cora Hartshorn Arboretum Board of Trustees, I ensured the Arboretum’s inclusion in Millburn’s newest historic district, opening the door to new infrastructure improvement grants. I also successfully advocated for their inclusion in the ordinance requiring native plants on town-owned properties and helped advance flood mitigation efforts along the Van Winkle Brook, which borders the Arboretum.</p>
+
+      <h3>TAP: What solutions do you have for Affordable Housing, the school system losing state funding, flood mitigation &amp; the Paper Mill?</h3>
+      <p><strong>Cohen:</strong></p>
+      <p>Although the school system is managed by the board of education (BOE) and not the township committee, I continue to actively use my strong relationships with our state legislators to push for the restoration of critical school funding. At the same time, I believe the BOE should explore new sponsorship opportunities to help fund their recreation properties and programs.</p>
+      <p>When it comes to flood mitigation, we are making real strides. A key solution involves allowing the Orange Reservoir to drain before major storms — a project that requires collaboration among Millburn, Essex County and the City of Orange. I’m proud that, during my time in office, we’ve moved much closer to securing an agreement that benefits everyone. However, we recently lost over $2 million in federal funding for vital improvements to the Gilbert Place pump station due to changes in Washington. I will continue fighting to get those promised funds restored and to keep Millburn’s infrastructure projects moving forward.</p>
+      <p>On affordable housing, while the rules are set by the state, we are standing firm in court to defend our alternative plan — smaller developments on different sites that include workforce housing — rather than the high-density project originally proposed for 9 Main Street. This approach better reflects the character and needs of our community.</p>
+      <p>Finally, with the Paper Mill Playhouse, we took a smart, strategic approach. Our financial support wasn’t just a donation — it secured ownership of additional assets for the Township and funded key improvements to properties we already own. We will continue to keep a close watch to ensure these upgrades are done right and in a cost-effective way.</p>
+
+      <h3>TAP: What would you like to tell our readers about yourself, your objectives for Millburn-Short Hills, etc.?</h3>
+      <p><strong>Cohen:</strong></p>
+      <p>Serving on the Township Committee has certainly come with its challenges, but over the course of my time in office, I’ve gained invaluable experience in local government. With a background in technology and finance in the banking industry, along with an MBA, I’ve been able to apply my skills in financial stewardship, organizational efficiency and consensus-building to drive the accomplishments I’ve shared.</p>
+      <p>Looking ahead, I’m eager for the completion of several important projects, including the renovations of town hall and the library, continued infrastructure improvements to combat flooding across the township and upgrading roadways.</p>
+      <p>As we move forward, I am committed to fostering greater resident involvement by encouraging more people to serve on committees and ensuring that their voices are heard at township meetings. With my problem-solving mindset and proven ability to build consensus, I will continue addressing emerging challenges and working toward a Millburn that is stronger, more resilient, and more vibrant for everyone.</p>
+
+    </div>
+
+    <a href="events.html" class="back-button">Back to Events</a>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024-2025 YouthVotesMatter.ORG</p>
+</footer>
+</body>
+</html>

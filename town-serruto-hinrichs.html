@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jamie Serruto and Kris Heinrichs</title>
+<link href="styles.css" rel="stylesheet"/>
+
+<style>
+/* Page-local: right-align top nav on about.html only */
+.about-local header .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav right */
+}
+.about-local header nav ul{
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* 统一的卡片框样式：Bio 与 Q&A 共用 */
+.panel-box{
+  background: var(--card-bg, #ffffff);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  margin: 16px auto;
+  max-width: 800px;
+}
+
+/* Q&A 内容样式（复用 bio-box 类名以沿用现有样式） */
+.panel-box.bio-box p{
+  margin: 0 0 .75rem;
+  line-height: 1.7;
+}
+.panel-box.bio-box h3{
+  margin: 1rem 0 .5rem;
+  font-size: 1.15rem;
+}
+.panel-box.bio-box ul{
+  margin: .25rem 0 .75rem 1.2rem;
+}
+.panel-box.bio-box li{
+  margin: .3rem 0;
+}
+.panel-box.bio-box p:last-child{ margin-bottom: 0; }
+
+/* Q&A 内的 iframe 自适应（如后续需要） */
+.qa-embed iframe{
+  width: 100%;
+  border: 0;
+  min-height: 600px;
+  display: block;
+}
+</style>
+</head>
+
+<body class="about-local">
+<header>
+  <div class="wrap">
+    <h1 class="logo">YouthVotesMatter.Org</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="candidate-profile">
+    <h2>Jamie Serruto and Kris Heinrichs</h2>
+
+    <div class="candidate-photo" style="text-align:center; margin:12px 0;">
+      <img src="images/sereruto-heinrichs.jpg" alt="Jamie Serruto and Kris Heinrichs" width="770" height="537" style="max-width:100%; height:auto;">
+    </div>
+
+    <!-- 替换为新的 TAP 采访内容 -->
+    <div class="panel-box bio-box">
+
+      <h3>TAP: Please tell me a bit about yourself (career, kids in the school system, how long you’ve lived in Millburn).</h3>
+      <p><strong>Serruto:</strong></p>
+      <p>I'm a lifelong resident of Millburn-Short Hills, with several generations of my family growing up here. Over 20 family members have graduated from Millburn High School. I'm a proud alum and served as Class President.</p>
+      <p>As a senior in high school, I was elected as the youngest-ever member of the Millburn Board of Education and served with distinction.</p>
+      <p>As I did when serving on the Board of Education, I will always prioritize residents' interests if elected to the Township Committee. Millburn-Short Hills is an exceptional community, and I will dedicate myself to ensuring that it remains one of the most desirable places to live.</p>
+      <p>I graduated from Fordham University and work as a strategic public affairs consultant. My dedication to public service includes:</p>
+      <ul>
+        <li>Earning the rank of Eagle Scout</li>
+        <li>Serving as the youngest elected member of the Millburn Board of Education</li>
+        <li>Acting as the current President of the Millburn-Short Hills Fourth of July Committee</li>
+        <li>Serving on the Planning Committee of Rocktoberfest</li>
+        <li>Membership in the Sons of the American Legion</li>
+        <li>Volunteering as Assistant Dean of Communications for the American Legion Jersey Boys State program</li>
+        <li>Serving on St. Rose of Lima's Parish Pastoral Council and community ministries</li>
+      </ul>
+
+      <p>My community involvement extends to:</p>
+      <ul>
+        <li>Volunteering for the Winter Walk, Chamber of Commerce, Snowflake Stroll and Memorial Day parade</li>
+        <li>Supporting youth development as an Adult Leader, Merit Badge Counselor and Lt. Governor of the Lenape Trail Klondike Derby for the Boy Scouts of America/Scouting America</li>
+      </ul>
+
+      <hr/>
+
+      <h3>TAP: Please tell me a bit about yourself (career, kids in the school system, how long you’ve lived in Millburn).</h3>
+      <p><strong>Heinrichs:</strong> I've resided in Millburn-Short Hills for 15 years and have been deeply involved in the community.</p>
+
+      <p><em>Professional Experience:</em> I've been a Chief Financial Officer and senior financial executive for 20 years at global digital advertising and technology companies. I've led various functions including finance, accounting, treasury, tax, real estate and human resources. I have extensive experience in budgeting, forecasting, strategic planning, risk management, internal controls and personnel development.</p>
+
+      <p><em>Educational Leadership:</em> I'm currently serving on the Millburn Board of Education, and my term will expire in January 2026. I was unanimously elected to serve as President for the current year. I have helped usher in significant, positive changes to the district, primarily at the high school. Previously, I held leadership roles in elementary and middle school PTO organizations.</p>
+
+      <p><em>Military and Community Service:</em> I served as an officer in the United States Army and on the board of a non-profit that promoted sexual assault prevention on college campuses. I hold a B.S./B.A. in Accounting from the University of Richmond and am a Certified Public Accountant.</p>
+
+      <p>I'm married and have three daughters.</p>
+
+      <hr/>
+
+      <h3>TAP: What do you want to do for the Township Committee?</h3>
+      <p>We share the same Vote for Millburn platform as Frank Saccomandi and Ben Stoller have lived up to since 2023.</p>
+
+      <h3>Our Priorities:</h3>
+      <ul>
+        <li>Reduce crime, improve pedestrian safety</li>
+        <li>Oppose reckless overdevelopment</li>
+        <li>Safeguard exceptional schools</li>
+        <li>Deal with local issues over party politics</li>
+        <li>Nurture our diversity</li>
+        <li>Preserve landmarks, history, environment, prevent flooding</li>
+        <li>Protect property values</li>
+        <li>Never lose sight of our legacy: the children</li>
+      </ul>
+
+      <h3>If elected, these are the specific things we would have as priorities on the Township Committee:</h3>
+
+      <h4>1. Stop the dump and stop more reckless overdevelopment</h4>
+      <p>We need to manage the reckless overdevelopment that was rubber-stamped by a previous township committee through the 2021 Fair Share Housing agreement, complying with Trenton's overdevelopment agenda without fighting for our residents. The previous administrations wrote a blank check to a for-profit developer at residents' expense. Moving forward, we will put guardrails in place to prevent any future sweetheart deals related to our municipal, taxpayer-owned properties. We will also continue the fight to prevent the 75-unit, income-segregated high-density housing development from being built on the toxic DPW Recycling site next to the middle school.</p>
+
+      <h4>2. Actively manage crime prevention and pedestrian safety</h4>
+      <p>The Vote for Millburn team of Frank Saccomandi and Ben Stoller pushed hard to ensure that our Police Department took more proactive steps to prevent vehicle theft and home burglaries. This has resulted in a 60% reduction in vehicle theft and 40% reduction in home burglaries. We intend to go further and allocate more resources to crime prevention, such as hiring more police as needed and adding technology that will give our police officers the information they need to catch potential crimes before they occur.</p>
+      <p>We will integrate pedestrian and traffic safety into a comprehensive public safety strategy. There are several very dangerous pedestrian crossings that require major changes, such as adding lights, moving sidewalk access and providing crossing guards. Examples that we will target include Glen Avenue and Lackawanna near the Library, the 85 Woodland project being built and the entirety of Old Short Hills Road. Construction should not create traffic and pedestrian hazards as, for example, the 85 Woodland project has. We will always put residents before developers.</p>
+
+      <h4>3. Develop a long-term strategic plan</h4>
+      <p>We will put in place a long-term strategic plan for how our town should evolve. We will design processes to ensure current and future township committees adhere to the long-term goals for our town, set by elected officials alongside our community members. Under the majority-Democratic leadership in place for the past eight years, our town has lurched from project to project, with no vision, no priorities and little respect for our taxpayers. Pet projects come out of the blue and are given priority over things like building a long-overdue firehouse.</p>
+      <p>We hear a lot about flood mitigation, but the problems have not been solved for the long term. We received a recent grant of $500K to refurbish a pump station that still has useful life remaining, yet Millburn taxpayers send $50 million a year to the county for very little in return. We have given away taxpayer money for a construction project for an entity that we don't own or manage. Special interests have taken priority over the residents.</p>
+
+      <h4>4. Support the Commission Referendum</h4>
+      <p>We support the Charter Study Referendum that is on the ballot, which will examine our form of government — the first step toward non-partisan elections. We have always fully supported the move toward a non-partisan form of local government. Local issues have nothing to do with national ones, and we would like to see our Township Committee free from partisan distractions, and totally focused on you, the Millburn residents, property owners and businesses.</p>
+
+      <h3>We are Committed to Millburn's Future</h3>
+      <p>We were inspired to run for Township Committee after seeing the positive changes implemented by Frank Saccomandi and Ben Stoller as part of the Vote for Millburn platform. Their leadership brought renewed focus to public safety, responsible development and community-driven governance, reinforcing the importance of fresh perspectives in township leadership.</p>
+      <p>"We want to build on the progress Frank and Ben have made," we said. "We are fully committed to the Charter Commission referendum in November, which is the first step toward non-partisan local governance in Millburn. After years of single-party mismanagement, Millburn voters deserve a chance to move beyond party politics toward a more united, locally focused township governing structure. We are delighted that Ben and Frank were able to deliver on this campaign promise," Serruto said.</p>
+      <p>"I am serving as President of the Millburn Board of Education and my biggest concern is that the future of Millburn, and thus our schools, is at risk," Heinrichs noted. “I see how single-party rule at the local, county and state levels fails to prioritize our community. We contribute significant tax dollars to Newark and Trenton but see little in return. It's time for leadership that truly advocates for Millburn — it's time to receive the investment, accountability and support we deserve.”</p>
+      <p>The disastrous decision to approve a 100% income-segregated housing project on a contaminated dump site remains a stark example of how poor leadership has impacted Millburn's future. Forced on our community in 2021 by then-Township Committee members, without resident input, the project poses serious environmental and safety risks and was further exacerbated by the prior Township Committee's failure to protect Millburn's interests.</p>
+      <p>"We want to bring our leadership experience, deep commitment to our community, and in-depth knowledge to finishing the job Frank and Ben started, ensuring our future is defined by our residents and property owners—not by those who neither live here nor invest in our community," Heinrichs added.</p>
+
+      <h3>We will add to the track record of progress.</h3>
+      <p>Since being sworn into the Township Committee in January 2024, Frank Saccomandi and Ben Stoller have proven that fresh leadership can bring meaningful change. Their contributions over the past year highlight how new perspectives can make an immediate and lasting impact on the community. Some of their signature accomplishments include:</p>
+
+      <h4>Empowering police to fight crime and improve public safety</h4>
+      <ul>
+        <li>Commissioning a police staffing study to further understand the needs of the department.</li>
+        <li>Crime is already down significantly (in 2024, car thefts were down almost 60% and home burglaries down almost 40% from the prior year).</li>
+      </ul>
+
+      <h4>Pushing back on unreasonable Trenton-mandated overdevelopment</h4>
+      <ul>
+        <li>Leading the charge against the ill-conceived 100% income-segregated $50+ million "developer giveaway" project that exceeded Millburn's Realistic Development Potential and was concocted and enabled by prior administrations, who allowed the developer currently suing us to join the lawsuit in 2023.</li>
+      </ul>
+
+      <h4>Respecting residents and encouraging public participation</h4>
+      <ul>
+        <li>Restoring the second round of public comment at Township Committee meetings</li>
+        <li>Working proactively to ensure that the mismanagement that occurred under single-party rule does not happen again.</li>
+        <li>Spearheading the Charter Commission Referendum on the November 2025 ballot, an important campaign promise that will help pave the way to non-partisan local governance.</li>
+      </ul>
+
+      <p>But the job is not done. We're not out of the woods yet — not by a long shot. Continued progress requires more change and more new leadership.</p>
+
+    </div>
+
+    <a href="events.html" class="back-button">Back to Events</a>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024-2025 YouthVotesMatter.ORG</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,307 @@
+/* ========== YouthVoice Theme (Orange · Enhanced) ========== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; }
+
+:root{
+  --bg:#fffefa; --text:#172034; --muted:#5a6478; --panel:#ffffff; --panel-2:#fff3d6; --border:#ffd899;
+  --brand:#ffa62b; --brand-2:#ff7a00; --accent:#ffe45e; --success:#2dd4bf; --danger:#ff5d5d; --info:#3abff8;
+  --radius:16px; --shadow:0 10px 26px rgba(17,24,39,.10);
+  --font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --grad: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 55%, var(--accent) 100%);
+  --bg-grad: radial-gradient(1200px 800px at 15% -20%, #fff0cc 0, transparent 60%), radial-gradient(1000px 600px at 100% 10%, #ffe4b3 0, transparent 60%);
+}
+
+body{ font: 16px/1.6 var(--font); background: var(--bg); color: var(--text); background-image: var(--bg-grad); }
+.container{ max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+header{ position: sticky; top: 0; z-index: 20; background: rgba(255, 248, 235, .75); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+header .wrap{ max-width: 1100px; margin: 0 auto; padding: 14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+h1.logo{ font-size: clamp(18px, 2.2vw, 24px); background: var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:800; letter-spacing:.2px }
+nav ul{ display:flex; gap: 16px; list-style: none; flex-wrap: wrap; }
+nav a{ color: var(--text); padding: 8px 12px; border-radius: 999px; border: 1px solid transparent; transition: .18s ease; font-weight: 600; }
+nav a:hover{ background: #ffedd5; border-color: #ffe6c7; }
+nav a.active{ background: var(--brand); color:#1a1e2e; }
+
+/* Hero */
+.hero{ max-width: 1100px; margin: 22px auto 0; padding: 24px 20px; }
+.hero .panel{ position:relative; padding: 28px; border-radius: var(--radius); background: var(--grad); color:#1a1e2e; box-shadow: var(--shadow); overflow: hidden; }
+.hero h2{ font-size: clamp(26px, 3.2vw, 40px); margin-bottom: 8px; letter-spacing:.2px }
+.hero p{ opacity:.9 }
+
+.cta-button{ display:inline-block; padding: 10px 16px; background:#1a1e2e; color:#fff; border-radius: 12px; font-weight: 700; border:0; transition: transform .15s ease, box-shadow .15s ease, background .15s ease; box-shadow: 0 8px 18px rgba(26,30,46,.25); }
+.cta-button:hover{ transform: translateY(-2px); }
+
+/* Sections */
+.section{ max-width: 1100px; margin: 18px auto 36px; padding: 0 20px; }
+.grid{ display:grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+.card{ background: var(--panel); border:1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); transition: transform .16s ease; }
+.card:hover{ transform: translateY(-3px); }
+.card h3{ font-size: 18px; margin-bottom: 6px; }
+.muted{ color: var(--muted); }
+
+/* List / Timeline */
+.list{ display:grid; gap:12px; }
+.item{ background: var(--panel); border:1px solid var(--border); border-radius: 14px; padding: 14px 16px; box-shadow: var(--shadow); display:flex; align-items:flex-start; gap:12px }
+.badge{ display:inline-block; min-width: 70px; text-align:center; padding:6px 10px; background: var(--panel-2); border:1px solid var(--border); border-radius: 10px; font-weight:700 }
+.kicker{ font-weight:700; color: var(--brand); }
+
+/* Table */
+.table{ width:100%; border-collapse: collapse; overflow: hidden; border-radius: 14px; box-shadow: var(--shadow); }
+.table th, .table td{ padding:12px 14px; border-bottom:1px solid var(--border) }
+.table thead th{ background: var(--panel-2); text-align:left; font-weight:700 }
+
+/* Forms */
+form{ display:grid; gap:12px; }
+input, select, textarea{ width:100%; background: var(--panel); color: var(--text); border:1px solid var(--border); border-radius: 12px; padding: 10px 12px; }
+button.button{ display:inline-block; padding: 10px 14px; border-radius: 12px; background: var(--brand); color:#1a1e2e; font-weight: 800; border: 0; cursor: pointer; }
+.helper{ font-size: 13px; color: var(--muted); }
+
+/* Footer */
+footer{ max-width: 1100px; margin: 12px auto 40px; padding: 16px 20px; border-radius: var(--radius); border:1px solid var(--border); background: var(--panel); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap: wrap; box-shadow: var(--shadow); }
+
+/* ================= Enhancements ================= */
+.gradient-border{
+  position: relative;
+  background: linear-gradient(180deg, #ffffff, #ffffff) padding-box,
+              linear-gradient(135deg, var(--brand), var(--brand-2), var(--accent)) border-box;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+}
+.hover-rise{ transition: transform .18s ease, box-shadow .18s ease; }
+.hover-rise:hover{ transform: translateY(-3px); box-shadow: 0 14px 28px rgba(17,24,39,.12); }
+:where(a, button, .button, .cta-button, input, select, textarea):focus-visible{
+  outline: none; box-shadow: 0 0 0 3px #0000, 0 0 0 6px #0000, 0 0 0 2px var(--brand);
+}
+.btn, .button { position: relative; overflow: hidden; }
+.btn.shimmer::after, .button.shimmer::after{
+  content:""; position:absolute; inset:0; background: linear-gradient(120deg, #ffffff00 0, #ffffff22 20%, #ffffff00 40%); 
+  transform: translateX(-120%); transition: transform .7s ease;
+}
+.btn.shimmer:hover::after, .button.shimmer:hover::after{ transform: translateX(120%); }
+.badge.grad{ background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 60%, var(--accent) 100%); color:#1a1e2e; font-weight:800; border: none; }
+.timeline{ position: relative; padding-left: 24px; }
+.timeline::before{
+  content:""; position:absolute; left:8px; top:0; bottom:0; width: 4px; border-radius: 8px;
+  background: linear-gradient(180deg, var(--brand), var(--brand-2), var(--accent)); opacity:.9;
+}
+.timeline .tl-item{ position:relative; padding: 10px 12px 10px 14px; margin: 8px 0; background: var(--panel); border:1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); }
+.timeline .tl-item::before{
+  content:""; position:absolute; left:-18px; top:14px; width:12px; height:12px; border-radius:999px;
+  background: radial-gradient(circle at 30% 30%, #fff 0 20%, var(--brand) 21% 100%); box-shadow: 0 0 0 3px #fff, 0 0 0 6px #0000;
+}
+.table thead th{ position: relative; }
+.table thead th::after{
+  content:""; position:absolute; left:0; right:0; bottom:-1px; height:2px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2), var(--accent));
+}
+.card.gb{ border: 2px solid transparent; background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(120deg, var(--brand), var(--brand-2)) border-box; border-radius: var(--radius); }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 184, 77, .35); } 100% { box-shadow: 0 0 0 18px rgba(255, 184, 77, 0); } }
+.cta-button.pulse{ animation: pulse 1.6s ease-out infinite; }
+@keyframes floatIn { from { transform: translateY(8px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.card, .item, .feature{ animation: floatIn .35s ease both; }
+
+
+/* === Prominence Boost === */
+
+/* Headings a touch larger for emphasis */
+h2{ font-size: clamp(1.65rem, 2.8vw + .5rem, 2.25rem); }
+h3{ font-size: clamp(1.2rem, 1.6vw + .7rem, 1.45rem); }
+
+/* Table: solid brand header for strong contrast */
+thead th{
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 2px 0 rgba(0,0,0,.06);
+}
+
+/* Dark mode table header */
+@media (prefers-color-scheme: dark){
+  thead th{
+    background: color-mix(in srgb, var(--brand) 85%, #000 15%);
+    color: #fff;
+  }
+}
+
+/* Row hover more distinct */
+tbody tr:hover{
+  background: color-mix(in srgb, var(--surface) 70%, var(--accent) 18%);
+}
+
+/* Factor cards: add accent left borders and slightly stronger backgrounds */
+.card.emphasis{ border-width: 2px; }
+
+.card-individual{ 
+  background: color-mix(in srgb, var(--tone-ind) 70%, var(--surface));
+  border-left: 6px solid var(--tone-ind-bd);
+}
+.card-institutional{ 
+  background: color-mix(in srgb, var(--tone-ins) 70%, var(--surface));
+  border-left: 6px solid var(--tone-ins-bd);
+}
+.card-social{ 
+  background: color-mix(in srgb, var(--tone-soc) 70%, var(--surface));
+  border-left: 6px solid var(--tone-soc-bd);
+}
+.card-economic{ 
+  background: color-mix(in srgb, var(--tone-eco) 70%, var(--surface));
+  border-left: 6px solid var(--tone-eco-bd);
+}
+
+/* Badges: higher contrast */
+.h-badge{
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+
+/* === Icon watermarks for factor cards === */
+.card{ position: relative; }
+.card-individual::after,
+.card-institutional::after,
+.card-social::after,
+.card-economic::after{
+  content: "";
+  position: absolute;
+  top: .6rem;
+  right: .75rem;
+  font-size: 1.4rem;
+  opacity: .18;
+  pointer-events: none;
+}
+.card-individual::after{ content: "🧍"; }
+.card-institutional::after{ content: "🏛️"; }
+.card-social::after{ content: "👥"; }
+.card-economic::after{ content: "💸"; }
+
+/* === Tables: stronger first column for quick scan === */
+table td:first-child, table th:first-child{
+  font-weight: 800;
+  min-width: 12ch;
+  white-space: nowrap;
+}
+
+/* === Mobile readability improvements === */
+@media (max-width: 640px){
+  .card{ padding: 1.15rem; }
+  thead th, tbody td{ padding: .85rem 1rem; }
+  p, li{ line-height: 1.75; }
+}
+
+
+/* === Collapse button & sortable header indicators === */
+.collapse-btn{
+  margin-left: .6rem;
+  padding: .3rem .6rem;
+  font: inherit;
+  font-weight: 800;
+  border-radius: .6rem;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 85%, var(--accent) 10%);
+  color: var(--ink);
+}
+.collapse-btn:hover{ filter: brightness(1.05); }
+.collapse-btn:focus{ outline: 3px solid color-mix(in hsl, var(--accent), white 35%); outline-offset: 2px; }
+
+table.sortable thead th{ position: sticky; top: 0; }
+table.sortable thead th::after{
+  content: "↕";
+  margin-left: .35rem;
+  opacity: .6;
+  font-size: .85em;
+}
+table.sortable thead th[data-sort-dir="asc"]::after{ content:"↑"; opacity: .9; }
+table.sortable thead th[data-sort-dir="desc"]::after{ content:"↓"; opacity: .9; }
+
+
+/* Section tools (index resources) */
+.section-tools{
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin: .5rem 0 0.25rem;
+  color: var(--ink-muted);
+}
+
+/* Table tools (about tables) */
+.table-tools{
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  margin: .5rem 0 .35rem;
+}
+.table-tools .table-search{
+  flex: 1;
+  padding: .55rem .7rem;
+  border-radius: .6rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+}
+.table-tools .export-csv{
+  padding: .6rem .8rem;
+  font-weight: 800;
+  border-radius: .6rem;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 80%, var(--accent) 12%);
+  color: var(--ink);
+}
+.table-tools .export-csv:hover{ filter: brightness(1.05); }
+
+
+/* === Global: header layout, logo left & nav right === */
+header .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav ul{
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* 卡片内每一“行”加底线（标题/段落/候选人块） */
+.event > h3,
+.event > p,
+.event > .candidates{
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+/* 候选人块内：小标题和每个候选人条目也加底线 */
+.event .candidates > h4,
+.event .candidates li{
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+/* 去掉最后一个元素/最后一项的底线，避免多余边线 */
+.event > .candidates:last-child{ margin-bottom: 0; }
+.event .candidates li:last-child{ border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+
+.candidate-photo{
+  display: flex;
+  justify-content: center;  /* 水平居中 */
+  margin: 12px 0;
+}
+.candidate-photo img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* 居中候选人标题 */
+#candidate-profile > h2{
+  text-align: center;
+  margin-bottom: .75rem; /* 可按需调整 */
+}
+

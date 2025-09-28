@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Events</title>
+  <link rel="stylesheet" href="styles.css"/>
+
+  <style>
+    /* Header layout */
+    .contact-local header .wrap{
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .contact-local header nav ul{
+      margin-left:auto; display:flex; gap:1rem; justify-content:flex-end;
+      list-style:none; padding:0;
+    }
+
+    /* Wider unified form layout */
+    .contact-local form{
+      max-width:560px;
+      margin:0 auto;
+      padding:0 1rem;
+      text-align:left;
+    }
+    .contact-local label{
+      display:block;
+      margin:.5rem 0 .25rem;
+      text-align:left;
+    }
+    .contact-local input[type="text"],
+    .contact-local input[type="email"],
+    .contact-local textarea{
+      display:block;
+      width:100%;
+      max-width:100%;
+      margin:0;
+      box-sizing:border-box;
+      padding:.75rem 1rem;
+      border:1px solid #ccc;
+      border-radius:.5rem;
+      font:inherit;
+    }
+    .contact-local button[type="submit"]{
+      margin-top:.9rem;
+      padding:.7rem 1.1rem;
+      border:0; border-radius:.6rem; cursor:pointer; font:inherit;
+    }
+    @media (max-width:520px){
+      .contact-local form{ max-width:100%; }
+    }
+
+    /* ====== 新增样式（卡片通用外观，背景用变量） ====== */
+    #election-events > h2{
+      text-align: center;
+      margin-bottom: .75rem;
+    }
+    #events-list{
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .event{
+      background: var(--card-bg, #fff);
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.06);
+      margin: 12px 0;
+    }
+    .event > h3{ margin-top: 0; }
+    .event .candidates h4{
+      margin-bottom: .5rem;
+    }
+    .event .candidates ul{
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body class="contact-local">
+<header>
+  <div class="wrap">
+    <h1 class="logo">YouthVotesMatter.Org</h1>
+    <nav><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+  <section id="election-events">
+    <h2>Upcoming Events</h2>
+    <div id="events-list">
+      <!-- 动态加载的活动将显示在这里 -->
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024-2025 YouthVotesMatter.ORG</p>
+</footer>
+
+<!-- JavaScript 动态加载活动 -->
+<script>
+  // 1) 选举活动数据（可选：每条也可以加 bg 字段进行精确控制）
+  const eventsData = [
+
+ {
+      title: "Millburn Town Committee Election",
+      date: "2025-11-03",
+      location: "City Hall Auditorium",
+      candidates: [
+        { name: "Annette Romano", link: "mayor-annette-romano.html" },
+        { name: "Michael Cohen",  link: "mayor-michael-cohen.html" },
+        
+      ]
+    },
+
+
+    {
+      title: "BOE Election",
+      date: "2025-11-04",
+      location: "City Hall Auditorium",
+      // bg: "#fff7ed", // 如需强制指定本条颜色，取消注释
+      candidates: [
+        { name: "Weiwei Huang", link: "candidate-weiwei-huang.html" },
+        { name: "Abigail Speltz",  link: "candidate-abigail-speltz.html" },
+        { name: "Jeff Cassin",  link: "candidate-jeff-cassin.html" }
+      ]
+    },
+
+   
+  ];
+
+  // 2) 标题/类型 -> 颜色映射表（同类同色）
+  const palette = {
+    "BOE Election": "#fff7ed",               // 橘米色
+    "Millburn Mayor Re-Election": "#eef2ff"  // 淡靛蓝
+  };
+
+  // 3) 回退颜色轮换（当标题未在 palette 中时）
+  const fallbacks = ["#ecfeff", "#f1f5f9", "#fef9c3"]; // 青/灰/浅黄
+  function pickFallbackColor(index){
+    return fallbacks[index % fallbacks.length];
+  }
+
+  // 4) 按日期从新到旧排序
+ function sortEventsByDate(events) {
+  return events.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+}
+
+
+  // 5) 动态渲染
+  function loadEvents() {
+    const eventsList = document.getElementById("events-list");
+    const sortedEvents = sortEventsByDate(eventsData);
+
+    sortedEvents.forEach((event, idx) => {
+      const eventDiv = document.createElement("div");
+      eventDiv.className = "event";
+
+      // —— 颜色决定逻辑（优先级：数据里bg > palette[title] > 回退轮换）——
+      const chosenColor =
+        (event.bg && typeof event.bg === "string") ?
+          event.bg :
+        (palette[event.title] ?? pickFallbackColor(idx));
+
+      eventDiv.style.setProperty("--card-bg", chosenColor);
+
+      // 日期格式化
+      const formattedDate = new Date(event.date).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
+
+      // 候选人列表
+      const candidatesList = (event.candidates || [])
+        .map(c => `<li><a href="${c.link}">${c.name}</a></li>`)
+        .join("");
+
+      eventDiv.innerHTML = `
+        <h3>${event.title}</h3>
+        <p><strong>Date:</strong> ${formattedDate}</p>
+        <p><strong>Location:</strong> ${event.location}</p>
+        <div class="candidates">
+          <h4>Candidates</h4>
+          <ul>${candidatesList}</ul>
+        </div>
+      `;
+
+      eventsList.appendChild(eventDiv);
+    });
+  }
+
+  window.onload = loadEvents;
+</script>
+</body>
+</html>

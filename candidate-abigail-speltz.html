@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abigail Speltz</title>
+<link href="styles.css" rel="stylesheet"/>
+
+<style>
+/* Page-local: right-align top nav on about.html only */
+.about-local header .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav right */
+}
+.about-local header nav ul{
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* 统一的卡片框样式：Bio 与（内层）Q&A 共用 */
+.panel-box{
+  background: var(--card-bg, #ffffff);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  margin: 16px auto;           /* 上下间距 + 居中 */
+  max-width: 800px;            /* 统一宽度 */
+}
+
+/* Bio 内段落间距 */
+.panel-box.bio-box p{
+  margin: 0 0 .75rem;
+  line-height: 1.7;
+}
+.panel-box.bio-box p:last-child{ margin-bottom: 0; }
+
+/* ✅ Bio 列表样式 */
+.panel-box.bio-box ul{
+  margin: .5rem 0 1rem;
+  padding-left: 1.2rem;        /* 缩进 */
+}
+.panel-box.bio-box li{
+  margin: .25rem 0;
+  line-height: 1.7;
+}
+
+/* Q&A 内的 iframe 自适应 */
+.qa-embed iframe{
+  width: 100%;
+  border: 0;
+  min-height: 600px;           /* 需要更高可调 */
+  display: block;
+}
+
+/* 可选：Q&A 标题微调（非必须） */
+.qa-title{
+  margin: 24px auto 8px;
+  max-width: 800px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+</style>
+</head>
+
+<body class="about-local">
+<header>
+  <div class="wrap">
+    <h1 class="logo">YouthVotesMatter.Org</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <section id="candidate-profile">
+      <h2>Abigail Speltz</h2>
+      <div class="candidate-photo">
+        <img src="images/abigail-speltz.jpg" alt="Abigail Speltz" width="770" height="962">
+      </div>
+
+      <!-- ✅ Bio 仍在卡片框内 -->
+      <div class="panel-box bio-box">
+        <p><strong>Bio:</strong> 
+        Her family moved to Millburn in 2013, when her daughters were in preschool and third grade. From the very beginning, they jumped into community life — within our first month, she was serving as a school lunch chair, and her husband, Matt, was coaching a Millburn Rec soccer team. They immediately fell in love with this exceptional town and have been dedicated ever since to helping it remain a special place to raise a family.</p>
+
+        <p>Their daughters have gone through Millburn public schools, from elementary through high school. They currently have a sophomore at Millburn High School and a junior at American University in Washington, DC.</p>
+
+        <p>Over the years, she has served in leadership roles across many local organizations, including:</p>
+
+        <ul>
+          <li>Millburn Education Foundation, Co-President, Grants Chair</li>
+          <li>South Mountain PTO, Co-President, Treasurer, Fundraising Chair</li>
+          <li>Washington School PTO, Co-President</li>
+          <li>Millburn Middle School PTO, Co-President</li>
+          <li>Millburn High School PTO, VP of Programs</li>
+          <li>Millburn Rec Sports, Softball and Volleyball Coach</li>
+          <li>South Mountain Neighborhood Watch, Block Captain for Undercliff Road</li>
+          <li>Millburn PTO Conference, Co-President, Treasurer</li>
+        </ul>
+
+        <p>Most recently, she was honored to be appointed by the Board of Education to fill a temporary vacancy through the end of the year. She is grateful for the Board’s trust in me and am committed to continuing to earn that trust through hard work, thoughtful decision-making, and meaningful engagement.</p>
+      </div>
+
+      <a href="events.html" class="back-button">Back to Events</a>
+    </section>
+
+   
+    <div class="qa-embed panel-box">
+      <iframe id="qaFrame" src="BOE_Speltz_QA.html" loading="lazy"></iframe>
+    </div>
+
+    <script>
+      // 同源情况下自动根据内部文档高度自适应
+      const f = document.getElementById('qaFrame');
+      f.addEventListener('load', () => {
+        try {
+          const h = f.contentWindow.document.documentElement.scrollHeight;
+          f.style.height = h + 'px';
+        } catch (e) {
+          // 非同源时无法读取高度，保持默认 min-height
+        }
+      });
+    </script>
+  </main>
+
+  <footer>
+    <p>&copy; 2024-2025 YouthVotesMatter.ORG</p>
+  </footer>
+</body>
+</html>
