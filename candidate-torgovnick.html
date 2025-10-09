@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gisela Torgovnick</title>
+<link href="styles.css" rel="stylesheet"/>
+
+<style>
+/* Page-local: right-align top nav on about.html only */
+.about-local header .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav right */
+}
+.about-local header nav ul{
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* 统一的卡片框样式：Bio 与 Q&A 共用 */
+.panel-box{
+  background: var(--card-bg, #ffffff);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  margin: 16px auto;           /* 上下间距 + 居中 */
+  max-width: 800px;            /* 统一宽度 */
+}
+
+/* Bio 内段落间距 */
+.panel-box.bio-box p{
+  margin: 0 0 .75rem;
+  line-height: 1.7;
+}
+.panel-box.bio-box p:last-child{ margin-bottom: 0; }
+
+/* Q&A 内的 iframe 自适应 */
+.qa-embed iframe{
+  width: 100%;
+  border: 0;
+  min-height: 600px;           /* 需要更高可调 */
+  display: block;
+}
+</style>
+</head>
+
+<body class="about-local">
+<header>
+  <div class="wrap">
+    <h1 class="logo">YouthVotesMatter.Org</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="candidate-profile">
+    <h2>Gisela Torgovnick</h2>
+
+    <div class="candidate-photo" style="text-align:center; margin:12px 0;">
+      <img src="images/gisela-torgovnick.jpg" alt="Weiwei Huang" width="770" height="879" style="max-width:100%; height:auto;">
+    </div>
+
+    <!-- Bio：使用统一的 panel-box 样式 -->
+    
+
+    <a href="events.html" class="back-button">Back to Events</a>
+  </section>
+
+  <!-- Q&A 外也使用同样的 panel-box，已移除可见的二级标题 -->
+  <div class="panel-box qa-embed">
+    <iframe id="qaFrame" src="BOE_Torgovnick_QA.html" loading="lazy" title="BOE Candidate Q&A (Huang)"></iframe>
+  </div>
+
+  <script>
+    // 同源情况下自动根据内部文档高度自适应
+    const f = document.getElementById('qaFrame');
+    f.addEventListener('load', () => {
+      try {
+        const h = f.contentWindow.document.documentElement.scrollHeight;
+        if (h && h > 600) f.style.height = h + 'px';
+      } catch (e) {
+        // 非同源时无法读取高度，保持默认 min-height
+      }
+    });
+  </script>
+</main>
+
+<footer>
+  <p>&copy; 2025 youthvotesmatter.org</p>
+</footer>
+</body>
+</html>
