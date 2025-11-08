@@ -86,6 +86,19 @@
     </form>
   </div>
 </main>
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "1") {
+        alert("Your message has been sent successfully!");
+    }
+    if (params.get("error")) {
+        alert("Failed to send your message. Please try again.");
+    }
+});
+</script>
+
+  
 
 <footer>
   <p>&copy; 2024-2025 YouthVotesMatter.ORG</p>
