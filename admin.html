@@ -54,13 +54,13 @@
         // 检查是否是成功的响应
         if (!response.ok) {
           console.error('Failed to login: HTTP error', response.status);
-          errorMessage.textContent = 'response is not ok';
+          errorMessage.textContent = `HTTP error ${response.status}`;
           errorMessage.style.display = 'block';
           return;
         }
 
-        // 解析响应的 JSON 数据
-        const result = await response.text(); // 由于后台返回的是文本，不是 JSON 格式
+        // 解析响应的文本数据
+        const result = await response.text(); // 由于后台返回的是纯文本，不是 JSON 格式
         console.log('Response:', result);  // 打印返回的响应内容
 
         // 根据返回的结果处理登录
@@ -71,11 +71,13 @@
         } else {
           // 登录失败，显示错误信息
           console.log('Login failed:', result || 'Invalid credentials');
+          errorMessage.textContent = result || 'Invalid credentials, please try again.';
           errorMessage.style.display = 'block';
         }
       } catch (error) {
+        // 捕获和显示错误信息
         console.error('Error during login:', error);
-        errorMessage.textContent = 'An error occurred, please try again later.';
+        errorMessage.textContent = `An error occurred: ${error.message}`;
         errorMessage.style.display = 'block';
       }
     }
