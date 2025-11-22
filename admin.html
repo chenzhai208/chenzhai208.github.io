@@ -36,7 +36,7 @@
 
       try {
         // 发送 POST 请求到后台进行验证
-        const response = await fetch('https://youthvotesmatter.org/AdminLoginServlet', {
+        const response = await fetch('/admin/login', {  // 修改为正确的路径
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -60,17 +60,17 @@
         }
 
         // 解析响应的 JSON 数据
-        const result = await response.json();
-        console.log('Response JSON:', result);  // 打印返回的 JSON 数据
+        const result = await response.text(); // 由于后台返回的是文本，不是 JSON 格式
+        console.log('Response:', result);  // 打印返回的响应内容
 
         // 根据返回的结果处理登录
-        if (result.success) {
+        if (result === "Login Successful!") {
           // 登录成功，跳转到管理员控制面板
           alert('Login successful! Welcome to the Admin Dashboard.');
           window.location.href = '/admin/dashboard';  // 假设管理员界面是此路径
         } else {
           // 登录失败，显示错误信息
-          console.log('Login failed:', result.message || 'Invalid credentials');
+          console.log('Login failed:', result || 'Invalid credentials');
           errorMessage.style.display = 'block';
         }
       } catch (error) {
