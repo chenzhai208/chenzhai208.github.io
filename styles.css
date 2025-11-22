@@ -325,3 +325,10 @@ header nav ul{
   margin-bottom: .75rem; /* 可按需调整 */
 }
 
+/* 解决布局影响 */
+footer, main {
+    position: relative;
+    z-index: 1;  /* 提升父容器的层级，确保管理员按钮浮动在上面 */
+}
+
+
