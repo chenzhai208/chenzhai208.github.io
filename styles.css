@@ -4,6 +4,26 @@ html, body { height: 100%; }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; }
 
+/* 固定在页面右下角 */
+.admin-login {
+    position: fixed;
+    bottom: 20px;  /* 距离底部 20px */
+    right: 20px;   /* 距离右侧 20px */
+    padding: 10px 20px;
+    background-color: #007bff;  /* 设置背景色 */
+    color: white;  /* 设置文字颜色 */
+    text-decoration: none;  /* 去除下划线 */
+    border-radius: 5px;  /* 设置圆角 */
+    font-size: 16px;  /* 字体大小 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* 添加阴影效果 */
+    transition: background-color 0.3s ease;
+}
+/* 悬停效果 */
+.admin-login:hover {
+    background-color: #0056b3;  /* 悬停时改变背景色 */
+}
+
+
 :root{
   --bg:#fffefa; --text:#172034; --muted:#5a6478; --panel:#ffffff; --panel-2:#fff3d6; --border:#ffd899;
   --brand:#ffa62b; --brand-2:#ff7a00; --accent:#ffe45e; --success:#2dd4bf; --danger:#ff5d5d; --info:#3abff8;
