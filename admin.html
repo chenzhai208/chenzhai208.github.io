@@ -47,13 +47,24 @@
           })
         });
 
-        // 调试：打印返回的响应状态和文本
+        // 打印响应状态和响应头
         console.log('Response status:', response.status);  // 打印响应状态码
+        console.log('Response headers:', [...response.headers]);  // 打印所有响应头
+
+        // 检查是否是成功的响应
+        if (!response.ok) {
+          console.error('Failed to login: HTTP error', response.status);
+          errorMessage.textContent = 'An error occurred, please try again later.';
+          errorMessage.style.display = 'block';
+          return;
+        }
+
+        // 解析响应的 JSON 数据
         const result = await response.json();
         console.log('Response JSON:', result);  // 打印返回的 JSON 数据
 
         // 根据返回的结果处理登录
-        if (response.ok && result.success) {
+        if (result.success) {
           // 登录成功，跳转到管理员控制面板
           alert('Login successful! Welcome to the Admin Dashboard.');
           window.location.href = '/admin/dashboard';  // 假设管理员界面是此路径
