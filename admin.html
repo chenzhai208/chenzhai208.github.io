@@ -54,7 +54,7 @@
         // 检查是否是成功的响应
         if (!response.ok) {
           console.error('Failed to login: HTTP error', response.status);
-          errorMessage.textContent = 'An error occurred, please try again later.';
+          errorMessage.textContent = 'response is not ok';
           errorMessage.style.display = 'block';
           return;
         }
